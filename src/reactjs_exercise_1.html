@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result"></div>
+
+<script>
+    class User {
+        constructor(email, password){
+            this.email = email;
+            this.password = password;
+        }
+    }
+
+    class PersonInfo extends User {
+        constructor(firstName, lastName, email, password){
+            super(email, password);
+            this.firstname = firstName;
+            this.lastname = lastName;
+        }
+        fullName(){
+            return this.firstname + " " + this.lastname;
+        }
+        userAccount(){
+            return "Email is: " + this.email + "<br/>"+ "Password is: " + this.password;
+        }
+        updatePass(value){
+            return "Your password is updated to: " + (this.password = value);
+        }
+    }
+    let result = document.getElementById("result");
+    let user1 = new PersonInfo("Jessie", "Caminos", "sample@gmail.com", "password123");
+    let user2 = new PersonInfo( "Jessel", "Luzon", "sample2@gmail.com", "newpassword123");
+
+
+    result.innerHTML += user2.fullName();
+    result.innerHTML += "<br/>"+ user2.userAccount();
+    result.innerHTML += "<br/>"+ user2.updatePass("updatedPass");
+</script>
+</body>
+</html>

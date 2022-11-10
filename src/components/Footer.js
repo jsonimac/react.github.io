@@ -1,10 +1,18 @@
+import React, { Component } from 'react';
 
-function Footer(){
-    return(
-        <div>
-            <hr/>
-            <h2>This is footer</h2>
-        </div>
-    );
+class Footer extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { }
+    }
+    render() { 
+        return ( 
+            <div>
+                <h1>{this.props.descript}</h1>
+            </div> 
+        );
+    }
 }
+ 
 export default Footer;
+
